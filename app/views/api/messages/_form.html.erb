@@ -1,0 +1,29 @@
+<%= error_messages_for(f.object) %>
+
+<table class="table" summary="Message form fields">
+  <tr class="field">
+    <th><%= f.label :speaker_id %></th>
+    <td><%= f.text_field :speaker_id %></td>
+  </tr>
+  <tr class="field">
+    <th><%= f.label :title %></th>
+    <td><%= f.text_field :title %></td>
+  </tr class="field">
+  <tr>
+    <th><%= f.label :video %></th>
+    <td><%= f.file_field :video %></td>
+  </tr>
+  <tr class="field">
+    <th><%= f.label :thumb %></th>
+    <td><%= f.file_field :thumb %></td>
+  </tr>
+  <tr class="field">
+    <th><%= f.label :tag %></th>
+    <td><%= f.text_field :tag %></td>
+  </tr>
+  <tr class="field">
+    <th><%= f.label :description %></th>
+    <td><%= f.text_area(:description, :rows => 10, :cols => 60) %></td>
+  </tr>
+  <tr class="actions"><td><%= f.submit %></td></tr>  
+</table>

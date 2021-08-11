@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Speakers</h1>
+  <%= link_to("Add New Speaker", new_api_speaker_path, :class => 'action new badge badge-pill') %>
+
+  <table class="table listing" summary="Speaker list">
+    <tr class="header">
+    <tr>
+      <th>Speaker ID</th>
+      <th>Speaker</th>
+      <th>Messages</th>
+      <th>Actions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @speakers.each do |speaker| %>
+      <tr>
+        <td><%= speaker.id %></td>
+        <td><%= speaker.name %></td>
+        <td><%= speaker.messages.size %></td>
+        <td  colspan="3"><%= link_to('View', api_speaker_path(speaker), :class => 'action badge badge-pill') %>
+        <%= link_to('Edit', edit_api_speaker_path(speaker), :class => 'action edit badge badge-pill') %>
+        <%= link_to('Delete', api_speaker_path(speaker), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'action delete badge badge-pill') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

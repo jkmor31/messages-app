@@ -1,0 +1,10 @@
+<h1>Edit Message</h1>
+
+ <%= form_for(:message) do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    <% end %>
+
+<div class="btn">
+<%= link_to 'Back', api_messages_path %>
+</div>

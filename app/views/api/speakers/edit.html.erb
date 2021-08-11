@@ -1,0 +1,14 @@
+<%= link_to("<< Back to List", api_speakers_path, :class => 'back-link') %>
+
+
+  <h1>Update Speaker</h1>
+
+ <%= form_for(:speaker) do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    <% end %>
+
+
+<div class="btn">
+  <%= link_to("Cancel", api_speakers_path, :class => 'back-link') %>
+</div>

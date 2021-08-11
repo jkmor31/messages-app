@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Messages</h1>
+<%= link_to("Add New Message", new_api_message_path, :class => 'action new badge badge-pill') %>
+
+<table class="table listing" summary="Message list">
+  <thead>
+    <tr class="header">
+      <th>#</th>
+      <th>Speaker</th>
+      <th>Title</th>
+      <th>Tag</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+          <td>
+          <% if message.thumb.attached? %>
+            <img class="center" id="thumbnail-img" src="<%=(url_for(message.thumb))%>"> 
+          <% end %></td>
+        <td><%= message.speaker.name %></td>
+        <td><%= message.title %></td>
+        <td><%= message.tag %></td>
+        <td colspan="3"><%= link_to('View', api_message_path(message), :class => 'action badge badge-pill') %>
+        <%= link_to('Edit', edit_api_message_path(message), :class => 'action edit badge badge-pil') %>
+        <%= link_to('Delete', api_message_path(message), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'action delete badge badge-pill') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', new_api_message_path %>
