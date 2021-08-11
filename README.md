@@ -1,24 +1,36 @@
-# README
+# Message App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
+Make sure you have Ruby and Rails installed on your system. You can check version by:
+```
+ruby -v
+rails -v
+```
+Clone respected git repository
+```
+git clone https://github.com/jkmor31/messages_app.git
+```
+Install all dependencies
+```
+bundle install
+```
+Note Webpacker may not install correctly. If this is the case run:
+```
+bundle exec rake webpacker:install
+```
 
-Things you may want to cover:
+Create a local database and migrate schema
+```
+rake db:create
+rake db:migrate
+```
+Now the rails app is setup and you may run your application
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Launch server with
+```
+rails s
+```
+Test a series of Rspec tests with:
+```
+bundle exec rspec
+```
