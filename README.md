@@ -14,11 +14,6 @@ Install all dependencies
 ```
 bundle install
 ```
-Note Webpacker may not install correctly. If this is the case run:
-```
-bundle exec rake webpacker:install
-```
-
 Create a local database and migrate schema
 ```
 rake db:create
