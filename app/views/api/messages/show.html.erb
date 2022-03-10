@@ -1,25 +1,6 @@
 <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @message.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @message.description %>
-</p>
-
-<p>
-  <strong>Tag:</strong>
-  <%= @message.tag %>
-</p>
-
-<p>
-  <strong>Speaker:</strong>
-  <%= @message.speaker_id %>
-</p>
+<%= link_to("<< Back to List", api_messages_path, :class => 'back-link') %>
 
 <div class="messages show">
   <h2>View Message</h2>
@@ -32,6 +13,32 @@
       </video>
     <% end %>
   </div>
+  <table class="table" summary="Message detail view">
+    <tr>
+      <th>Speaker Name</th>
+      <td><%= @message.speaker.name %></td>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <td><%= @message.title %></td>
+    </tr>
+    <tr>
+      <th>Tag</th>
+      <td><%= @message.tag %></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><%= @message.description %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @message.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @message.updated_at %></td>
+    </tr>
+  </table>
   </div>
 <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
 
