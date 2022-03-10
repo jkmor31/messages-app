@@ -1,3 +1,4 @@
+<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -16,14 +17,23 @@
 </p>
 
 <p>
-  <strong>Video:</strong>
-  <%= @message.video %>
-</p>
-
-<p>
   <strong>Speaker:</strong>
   <%= @message.speaker_id %>
 </p>
+
+<div class="messages show">
+  <h2>View Message</h2>
+  <div id="video-clip">
+    <% if @message.video.attached? %>
+      <video
+        id="my-video" class="video-js" controls preload="auto" width="640" height="264" 
+        poster="" data-setup="{}">
+          <source src="<%=(url_for(@message.video))%>" type="video/mp4" />
+      </video>
+    <% end %>
+  </div>
+  </div>
+<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
 
 <%= link_to 'Edit', edit_api_message_path(@message) %> |
 <%= link_to 'Back', api_messages_path %>
